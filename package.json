@@ -1,0 +1,15 @@
+{
+  "name": "inversion",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "jimp": "^0.22.12",
+    "pinata": "^0.2.0"
+  }
+}
