@@ -1,5 +1,5 @@
 {
-  "name": "inversion",
+  "name": "inverse-backend",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
