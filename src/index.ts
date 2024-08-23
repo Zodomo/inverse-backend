@@ -1,6 +1,7 @@
 import Jimp from "jimp";
 import { PinataSDK } from "pinata";
 
+// OpenSea NFT Metadata Parameters
 type Metadata = {
   name: string;
   description: string;
@@ -12,6 +13,7 @@ type Metadata = {
   }[];
 };
 
+// Initializes PinataSDK
 export async function getPinata(
   jwt: string,
   gateway: string
@@ -22,6 +24,7 @@ export async function getPinata(
   });
 }
 
+// Downloads image from URL and returns inverted image in base64 format
 export async function invertImage(imageUrl: string): Promise<string> {
   try {
     const image = await Jimp.read(imageUrl);
@@ -34,6 +37,8 @@ export async function invertImage(imageUrl: string): Promise<string> {
   }
 }
 
+// Used to package Metadata object
+// Values are retrieved from OpenSea API by frontend, image string from invertImage()
 export function createMetadata(
   name: string,
   description: string,
@@ -59,6 +64,7 @@ export function createMetadata(
   };
 }
 
+// Uploads Metadata object to IPFS and returns IPFS CID
 export async function uploadToIpfs(
   pinata: PinataSDK,
   metadata: Metadata
@@ -77,6 +83,7 @@ export async function uploadToIpfs(
   }
 }
 
+// Creates "NFT collection" on NFT.storage, only called once
 export async function createNftStorageCollection(
   apiKey: string
 ): Promise<boolean> {
@@ -115,6 +122,7 @@ export async function createNftStorageCollection(
   }
 }
 
+// Pins IPFS uploads via Pinata using NFT.storage for permanence on Filecoin
 export async function addTokensToNftStorageCollection(
   apiKey: string,
   tokenId: string,
