@@ -1,0 +1,10 @@
+{
+  "transactions": [
+    {
+      "rpc": "https://rpc.alephzero-testnet.gelato.digital"
+    },
+    {
+      "rpc": "https://rpc.alephzero-testnet.gelato.digital"
+    }
+  ]
+}

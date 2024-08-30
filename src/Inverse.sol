@@ -85,6 +85,7 @@ contract Inverse is ERC721, OwnableRoles {
         _mint(to, metadata);
     }
 
+    // Update token metadata
     function updateTokenURI(uint256[] calldata tokenIds, string[] calldata metadata) external onlyRolesOrOwner(_OPERATOR) {
         if (tokenIds.length != metadata.length) revert ArrayLengthMismatch();
         for (uint256 i; i < tokenIds.length; ++i) {
@@ -93,23 +94,27 @@ contract Inverse is ERC721, OwnableRoles {
         }
     }
 
+    // Withdraw native token stipend or excessive funds
     function withdraw(address to, uint256 amount) external onlyRolesOrOwner(_OPERATOR) {
         if (amount > address(this).balance) revert TransferFailed();
         (bool success,) = payable(to).call{value: amount}("");
         if (!success) revert TransferFailed();
     }
 
+    // Assign/Revoke Operator role
     function assignOperator(address addr, bool status) external onlyOwner {
         if (status) _grantRoles(addr, _OPERATOR);
         else _removeRoles(addr, _OPERATOR);
     }
 
+    // Change signer
     function changeSigner(address newSigner) external onlyOwner {
         if (signer == newSigner) revert AlreadySet();
         signer = newSigner;
         emit Signer(newSigner);
     }
 
+    // Change native token gas stipend
     function changeStipend(uint256 newGasStipend) external onlyOwner {
         if (newGasStipend > 1 ether) revert ExcessiveInput();
         gasStipend = newGasStipend;
