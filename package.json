@@ -9,6 +9,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
     "jimp": "^0.22.12",
     "pinata": "^0.2.0"
   }
