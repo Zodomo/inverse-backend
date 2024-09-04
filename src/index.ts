@@ -8,7 +8,7 @@ type Metadata = {
   external_url: string;
   image: string;
   attributes: {
-    trait_type: "Collection" | "Chain";
+    trait_type: "Collection" | "Chain" | "Address";
     value: string;
   }[];
 };
@@ -43,6 +43,7 @@ export function createMetadata(
   name: string,
   description: string,
   collection: string,
+  address: string,
   chain: string,
   image: string
 ): Metadata {
@@ -59,6 +60,10 @@ export function createMetadata(
       {
         trait_type: "Chain",
         value: chain,
+      },
+      {
+        trait_type: "Address",
+        value: address,
       },
     ],
   };
@@ -178,6 +183,7 @@ const metadata = createMetadata(
   "Remiliangel #717",
   "A Collection of souls trapped in cyberspace.",
   "Remiliangel",
+  "0xA7fAa37411efD5B0055754f4AE317EC1CA76e8aC",
   "Ethereum",
   base64
 );
