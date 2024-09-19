@@ -5,8 +5,8 @@ import contractABI from "./abi.json";
 dotenv.config();
 
 // Configuration
-const RPC_URL = process.env.TESTNET_RPC_URL;
-const CONTRACT_ADDRESS = "0x2e28b5cc90d8a9e4d661417568eb83bdd2df26c3";
+const RPC_URL = process.env.SEPOLIA_RPC_URL;
+const CONTRACT_ADDRESS = "0x100acD34938796aaad6A81528459492d35E4113E";
 const MINTER_PRIVATE_KEY = process.env.MINTER_PRIVATE_KEY;
 const SIGNER_PRIVATE_KEY = process.env.SIGNER_PRIVATE_KEY;
 
@@ -82,9 +82,9 @@ async function mintNFT(
 
 // Example usage
 async function main() {
-  const metadataUri = "https://remilio.org/remilio/json/8952"; // Replace with your metadata URI
-  const collection = "Redacted Remilio Babies"; // Replace with your collection name
-  const identifier = 8952; // Replace with your identifier
+  const metadataUri = "https://schizoposters.xyz/api/tokens/metadata/149"; // Replace with your metadata URI
+  const collection = "SchizoPosters"; // Replace with your collection name
+  const identifier = 149; // Replace with your identifier
 
   await mintNFT(metadataUri, collection, identifier);
 }

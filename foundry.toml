@@ -4,6 +4,7 @@ out = "out"
 libs = ["node_modules", "lib"]
 
 [rpc_endpoints]
+sepolia = "${SEPOLIA_RPC_URL}"
 testnet = "${TESTNET_RPC_URL}"
 mainnet = "${MAINNET_RPC_URL}"
 
