@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.23;
 
-import {ERC721} from "../lib/solady/src/tokens/ERC721.sol";
+import {ERC721} from "./ERC721.sol";
 import {OwnableRoles} from "../lib/solady/src/auth/OwnableRoles.sol";
 import {SignatureCheckerLib as SCL} from "../lib/solady/src/utils/SignatureCheckerLib.sol";
 

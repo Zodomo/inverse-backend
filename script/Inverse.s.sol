@@ -18,7 +18,7 @@ contract InverseScript is Script {
 
     function deploy() public {
         vm.startBroadcast(deployerPrivateKey);
-        inverse = new Inverse(deployer, signer, 0.001 ether);
+        inverse = new Inverse(deployer, deployer, 0.001 ether);
         vm.stopBroadcast();
         console2.log("Deployment Address:", address(inverse));
     }

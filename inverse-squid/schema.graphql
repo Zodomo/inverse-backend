@@ -1,7 +1,30 @@
-type Burn @entity {
+type Transfer @entity {
   id: ID!
-  block: Int!
-  address: String! @index
-  value: BigInt!
-  txHash: String!
+  token: Token!
+  from: Owner!
+  to: Owner!
+  timestamp: DateTime!
+  blockNumber: Int!
+  txHash: String! @index
+}
+
+type GasStipend @entity {
+  id: ID!
+  addr: String! @index
+  amount: BigInt! @index
+  timestamp: DateTime!
+  blockNumber: Int!
+  txHash: String! @index
+}
+
+type Owner @entity {
+  id: ID!
+  ownedTokens: [Token!]! @derivedFrom(field: "owner")
+}
+
+type Token @entity {
+  id: ID!
+  tokenId: BigInt!
+  owner: Owner!
+  transfers: [Transfer!]! @derivedFrom(field: "token")
 }

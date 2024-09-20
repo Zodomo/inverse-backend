@@ -6,7 +6,7 @@ dotenv.config();
 
 // Configuration
 const RPC_URL = process.env.SEPOLIA_RPC_URL;
-const CONTRACT_ADDRESS = "0x100acD34938796aaad6A81528459492d35E4113E";
+const CONTRACT_ADDRESS = "0x5A06811Fb0EcF10B98eF4243d5b16fF9b0efbf0C";
 const MINTER_PRIVATE_KEY = process.env.MINTER_PRIVATE_KEY;
 const SIGNER_PRIVATE_KEY = process.env.SIGNER_PRIVATE_KEY;
 
@@ -82,9 +82,9 @@ async function mintNFT(
 
 // Example usage
 async function main() {
-  const metadataUri = "https://schizoposters.xyz/api/tokens/metadata/149"; // Replace with your metadata URI
+  const metadataUri = "https://schizoposters.xyz/api/tokens/metadata/151"; // Replace with your metadata URI
   const collection = "SchizoPosters"; // Replace with your collection name
-  const identifier = 149; // Replace with your identifier
+  const identifier = 151; // Replace with your identifier
 
   await mintNFT(metadataUri, collection, identifier);
 }

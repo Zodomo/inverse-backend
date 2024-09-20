@@ -3,7 +3,7 @@ import { event, fun, viewFun, indexed, ContractBase } from '@subsquid/evm-abi'
 import type { EventParams as EParams, FunctionArguments, FunctionReturn } from '@subsquid/evm-abi'
 
 export const events = {
-    Approval: event("0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925", "Approval(address,address,uint256)", {"owner": indexed(p.address), "account": indexed(p.address), "id": indexed(p.uint256)}),
+    Approval: event("0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925", "Approval(address,address,uint256)", {"owner": indexed(p.address), "account": indexed(p.address), "tokenId": indexed(p.uint256)}),
     ApprovalForAll: event("0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31", "ApprovalForAll(address,address,bool)", {"owner": indexed(p.address), "operator": indexed(p.address), "isApproved": p.bool}),
     GasStipend: event("0x54e1b905e319ef4ee53d99d9a4f206c6c53f48be039ea8d5606f605b610b9116", "GasStipend(address,uint256)", {"addr": indexed(p.address), "amount": indexed(p.uint256)}),
     GasStipendSet: event("0x377662af9d07be81f18cfc625bc0bdbf3b8168ca88ebd61b9aa4370c675eaf0f", "GasStipendSet(uint256)", {"amount": indexed(p.uint256)}),
@@ -13,7 +13,7 @@ export const events = {
     RolesUpdated: event("0x715ad5ce61fc9595c7b415289d59cf203f23a94fa06f04af7e489a0a76e1fe26", "RolesUpdated(address,uint256)", {"user": indexed(p.address), "roles": indexed(p.uint256)}),
     Signer: event("0xf4b0650db61027ac5b4ec7eb8ba223cf23715631228786676084b09a56b77861", "Signer(address)", {"signer": indexed(p.address)}),
     TokenURI: event("0xe9dd2c01379f6033709e315d41f1a58fcbd937ae2512da16462852d1082e7b73", "TokenURI(uint256,string)", {"tokenId": indexed(p.uint256), "metadataUri": indexed(p.string)}),
-    Transfer: event("0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", "Transfer(address,address,uint256)", {"from": indexed(p.address), "to": indexed(p.address), "id": indexed(p.uint256)}),
+    Transfer: event("0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", "Transfer(address,address,uint256)", {"from": indexed(p.address), "to": indexed(p.address), "tokenId": indexed(p.uint256)}),
 }
 
 export const functions = {

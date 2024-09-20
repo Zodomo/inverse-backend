@@ -1,3 +1,5 @@
+# See RUN.md to see how to run the indexer
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/subsquid/squid-evm-template)
 
 # Minimal EVM squid
@@ -6,7 +8,7 @@ This is a starter template of a squid indexer for EVM networks (Ethereum, Polygo
 
 To extract EVM logs and transactions by a topic or a contract address, use [`.addLog()`](https://docs.subsquid.io/evm-indexing/configuration/evm-logs/), [`.addTransaction()`](https://docs.subsquid.io/evm-indexing/configuration/transactions/), [`.addTrace()`](https://docs.subsquid.io/evm-indexing/configuration/traces/) or [`.addStateDiff()`](https://docs.subsquid.io/evm-indexing/configuration/state-diffs/) methods of the `EvmBatchProcessor` instance defined in `src/processor.ts`. Select data fields with [`.setFields()`](https://docs.subsquid.io/evm-indexing/configuration/data-selection/).
 
-The requested data is transformed in batches by a single handler provided to the `processor.run()` method. 
+The requested data is transformed in batches by a single handler provided to the `processor.run()` method.
 
 For a full list of supported networks and config options,
 check the [`EvmBatchProcessor` overview](https://docs.subsquid.io/evm-indexing/evm-processor/) and the [setup section](https://docs.subsquid.io/evm-indexing/configuration/).
@@ -37,9 +39,11 @@ sqd build
 # 5. Start both the squid processor and the GraphQL server
 sqd run .
 ```
+
 A GraphiQL playground will be available at [localhost:4350/graphql](http://localhost:4350/graphql).
 
 You can also start squid services one by one:
+
 ```bash
 sqd process
 sqd serve
@@ -73,6 +77,7 @@ sqd up
 ## replace any old schemas with a new one made from the entities
 sqd migration:generate
 ```
+
 See [docs on database migrations](https://docs.subsquid.io/store/postgres/db-migrations/) for more details.
 
 ### 4. Import ABI contract and generate interfaces to decode events
@@ -89,9 +94,9 @@ See more details on the [`squid-evm-typegen` doc page](https://docs.subsquid.io/
 
 Squid tools assume a certain [project layout](https://docs.subsquid.io/basics/squid-structure):
 
-* All compiled js files must reside in `lib` and all TypeScript sources in `src`.
-The layout of `lib` must reflect `src`.
-* All TypeORM classes must be exported by `src/model/index.ts` (`lib/model` module).
-* Database schema must be defined in `schema.graphql`.
-* Database migrations must reside in `db/migrations` and must be plain js files.
-* `sqd(1)` and `squid-*(1)` executables consult `.env` file for environment variables.
+- All compiled js files must reside in `lib` and all TypeScript sources in `src`.
+  The layout of `lib` must reflect `src`.
+- All TypeORM classes must be exported by `src/model/index.ts` (`lib/model` module).
+- Database schema must be defined in `schema.graphql`.
+- Database migrations must reside in `db/migrations` and must be plain js files.
+- `sqd(1)` and `squid-*(1)` executables consult `.env` file for environment variables.
