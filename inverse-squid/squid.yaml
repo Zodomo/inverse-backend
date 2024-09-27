@@ -1,14 +1,16 @@
 manifestVersion: subsquid.io/v0.1
 name: inverse-squid
 version: 1
-description: 'The very first evm squid from manifest  '
-build: 
+description: "Retrieve data from the testnet Inverse NFT contract"
+build:
 deploy:
   addons:
-    postgres: 
+    postgres:
     rpc:
-      - eth.http
+      - eth-sepolia.http
   processor:
+    env:
+      RPC_ETH_HTTP: ${{ secrets.RPC_ETH_HTTP }}
     cmd:
       - sqd
       - process:prod
