@@ -5,8 +5,8 @@ import contractABI from "./abi.json";
 dotenv.config();
 
 // Configuration
-const RPC_URL = process.env.SEPOLIA_RPC_URL;
-const CONTRACT_ADDRESS = "0x5A06811Fb0EcF10B98eF4243d5b16fF9b0efbf0C";
+const RPC_URL = process.env.MAINNET_RPC_URL;
+const CONTRACT_ADDRESS = "0xe900A9e0E76E1DaeD69F954F4F15dedECa382F02";
 const MINTER_PRIVATE_KEY = process.env.MINTER_PRIVATE_KEY;
 const SIGNER_PRIVATE_KEY = process.env.SIGNER_PRIVATE_KEY;
 

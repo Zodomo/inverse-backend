@@ -7,7 +7,7 @@ deploy:
   addons:
     postgres:
     rpc:
-      - eth-sepolia.http
+      - aleph-zero.http
   processor:
     env:
       RPC_ETH_HTTP: ${{ secrets.RPC_ETH_HTTP }}

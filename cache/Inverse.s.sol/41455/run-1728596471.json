@@ -1,0 +1,10 @@
+{
+  "transactions": [
+    {
+      "rpc": "https://rpc.alephzero.raas.gelato.cloud/"
+    },
+    {
+      "rpc": "https://rpc.alephzero.raas.gelato.cloud/"
+    }
+  ]
+}

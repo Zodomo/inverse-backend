@@ -11,12 +11,12 @@ import { Store } from "@subsquid/typeorm-store";
 import * as inverse from "./abi/inverse";
 
 export const CONTRACT_ADDRESS =
-  "0x5a06811fb0ecf10b98ef4243d5b16ff9b0efbf0c".toLowerCase();
+  "0xe900A9e0E76E1DaeD69F954F4F15dedECa382F02".toLowerCase();
 
 export const processor = new EvmBatchProcessor()
   // Lookup archive by the network name in Subsquid registry
   // See https://docs.subsquid.io/evm-indexing/supported-networks/
-  .setGateway("https://v2.archive.subsquid.io/network/ethereum-sepolia")
+  .setGateway("https://v2.archive.subsquid.io/network/aleph-zero-evm-mainnet")
   // Chain RPC endpoint is required for
   //  - indexing unfinalized blocks https://docs.subsquid.io/basics/unfinalized-blocks/
   //  - querying the contract state https://docs.subsquid.io/evm-indexing/query-state/
@@ -29,7 +29,7 @@ export const processor = new EvmBatchProcessor()
   })
   .setFinalityConfirmation(16)
   .setBlockRange({
-    from: 6_724_611,
+    from: 3_710_971,
   })
   .addLog({
     address: [CONTRACT_ADDRESS],
